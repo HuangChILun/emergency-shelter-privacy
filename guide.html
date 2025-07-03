@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台海戰爭逃報報 使用說明</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navigation {
+            background: #3498db;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navigation a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        .navigation a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="index.html">隱私政策</a>
+            <a href="guide.html" class="active">使用說明</a>
+            <a href="source.html">資料來源</a>
+        </div>
+
+        <h1>台海戰爭逃報報 使用說明</h1>
+
+        <div class="highlight">
+            歡迎使用 <strong>台海戰爭逃報報</strong>！本 App 旨在提供臺灣全境的防空避難所位置、旅遊警示與緊急通知。以下功能皆可離線操作（第一次需網路下載資料）。
+        </div>
+
+        <h2>1. 首次啟用</h2>
+        <ol>
+            <li>安裝並開啟 App。</li>
+            <li>系統將提示授權「位置」與「推播」權限，建議點選<strong>允許</strong>以獲得最佳體驗。</li>
+        </ol>
+
+        <h2>2. 下載／更新離線資料</h2>
+        <p>點擊首頁右上角「⬇」圖示可手動更新避難所清單(一天最多更新一次)。</p>
+
+        <h2>3. 地圖與卡片操作</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>手勢／按鈕</th>
+                    <th>效果</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>點擊避難所圖標</strong></td>
+                    <td>展開卡片，顯示容量、地址、分局等資訊</td>
+                </tr>
+                <tr>
+                    <td><strong>向上滑卡片</strong></td>
+                    <td>查看更詳細欄位（樓層、備註）</td>
+                </tr>
+                <tr>
+                    <td><strong>點擊「導航」</strong></td>
+                    <td>透過預設地圖 App 規劃單一路線</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight">
+            <strong>付費版功能</strong><br>
+            若升級 Premium，可啟用：
+            <ul>
+                <li><strong>持續警報</strong>：緊急狀況下持續響鈴，直到您手動關閉</li>
+                <li><strong>免廣告</strong></li>
+                <li><strong>資訊中心</strong>：獲取國外權威新聞摘要與標題，讓您能簡單了解趨勢</li>
+            </ul>
+        </div>
+
+        <h2>4. 旅遊警示＆推播</h2>
+        <ul>
+            <li>系統每 15 分鐘檢查一次官方旅遊警示。</li>
+            <li>一旦等級變化，App 會推播通知並顯示對應顏色。</li>
+            <li>您可在 <strong>設定 → 通知設定</strong> 關閉一般推播，緊急警報仍會保留。</li>
+        </ul>
+
+        <h2>5. 常見問題</h2>
+        
+        <h3>Q1. 為何看不到任何避難所？</h3>
+        <p>請先確認已下載該縣市資料；若無，切換網路並再次嘗試。</p>
+
+        <h3>Q2. 付費後在哪裡取消？</h3>
+        <p>iOS 請至「設定 → Apple ID → 訂閱項目」，Android 請至 Google Play → 付款與訂閱 → 訂閱。</p>
+
+        <div class="highlight">
+            更多疑問請來信：<a href="mailto:th0099666@gmail.com">th0099666@gmail.com</a>
+        </div>
+    </div>
+</body>
+</html>
