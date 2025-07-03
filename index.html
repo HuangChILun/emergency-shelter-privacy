@@ -20,6 +20,28 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        .navigation {
+            background: #3498db;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navigation a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        .navigation a.active {
+            background-color: rgba(255,255,255,0.2);
+        }
         h1 {
             color: #2c3e50;
             text-align: center;
@@ -74,6 +96,12 @@
 </head>
 <body>
     <div class="container">
+        <div class="navigation">
+            <a href="index.html" class="active">隱私政策</a>
+            <a href="guide.html">使用說明</a>
+            <a href="source.html">資料來源</a>
+        </div>
+
         <h1>台海戰爭逃報報 隱私權政策</h1>
         <p class="update-date">最後更新：2025/06/28</p>
         <p class="contact">如有任何疑問，請來信 <a href="mailto:th0099666@gmail.com">th0099666@gmail.com</a></p>
