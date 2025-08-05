@@ -5,122 +5,269 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台海戰爭逃報報 資料來源</title>
     <style>
-    body{
-        line-height:1.7;
-        max-width:860px;
-        margin:0 auto;
-        padding:24px;
-        background:#f5f7fa;
-    }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container{
-        background:#fff;
-        padding:36px 40px;
-        border-radius:10px;
-        box-shadow:0 4px 14px rgba(0,0,0,.06);
-    }
-    
-    /* 導覽列色系 & spacing */
-    .navigation{
-        background:#2d8cf0;
-        padding:18px;
-        border-radius:8px;
-        margin-bottom:28px;
-        text-align:center;
-    }
-    
-    .navigation a{
-        color:#fff;
-        text-decoration:none;
-        margin:0 18px;
-        font-weight:600;
-        padding:8px 18px;
-        border-radius:4px;
-        transition:background-color .25s;
-    }
-    .navigation a:hover{background:rgba(255,255,255,.18);}
-    .navigation a.active{background:rgba(255,255,255,.32);}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #f6f6f0;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
         }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        /* Header with navigation */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .navigation a:hover,
+        .navigation a.active {
+            color: #000;
+            border-bottom-color: #ff6600;
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 40px;
+        }
+
         h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
         }
-        h2 {
-            color: #34495e;
-            margin-top: 30px;
-            border-left: 4px solid #3498db;
-            padding-left: 15px;
+
+        .intro {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #555;
         }
+
+        /* Table styling with YC aesthetic */
+        .table-container {
+            margin: 30px 0;
+        }
+
         table {
             width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 14px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #fff;
             font-size: 13px;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            overflow: hidden;
         }
-        .highlight {
-            background-color: #e8f4f8;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-left: 4px solid #3498db;
+
+        thead th {
+            background: #f8f8f8;
+            color: #666;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 15px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
         }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.1s ease;
+        }
+
+        tbody tr:hover {
+            background: #fafafa;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 12px;
+            vertical-align: top;
+            border: none;
+        }
+
+        td:first-child {
+            color: #999;
+            font-weight: 500;
+            width: 40px;
+            text-align: center;
+        }
+
+        /* Links */
         a {
-            color: #3498db;
+            color: #ff6600;
             text-decoration: none;
             word-break: break-all;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
+        /* Note section */
         .note {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 20px 0;
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 30px 0;
+            font-size: 13px;
+            line-height: 1.5;
         }
+
         .note strong {
-            color: #856404;
+            color: #f57c00;
+            font-weight: 600;
         }
-        code {
-            background-color: #f1f1f1;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+
+            .header,
+            .main-content {
+                padding: 20px;
+            }
+
+            .navigation {
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            thead th,
+            td {
+                padding: 10px 8px;
+            }
+
+            .intro,
+            .note {
+                padding: 15px;
+            }
+        }
+
+        /* Clean table for mobile */
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #e5e5e5;
+                margin-bottom: 10px;
+                padding: 15px;
+                border-radius: 6px;
+                background: #fff;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding: 8px 0;
+            }
+
+            td:before {
+                content: attr(data-label) ": ";
+                font-weight: 600;
+                color: #666;
+                display: inline-block;
+                width: 120px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-    <div class="navigation">
-        <a href="privacy.html">隱私政策</a>
-        <a href="service_agreement.html">服務條款</a>
-        <a href="guide.html">使用說明</a>
-        <a href="source.html">資料來源</a>
-    </div>
+        <div class="header">
+            <a href="index.html" class="nav-brand">台海戰爭逃報報</a>
+            <div class="navigation">
+                <a href="privacy.html">隱私政策</a>
+                <a href="service_agreement.html">服務條款</a>
+                <a href="guide.html">使用說明</a>
+                <a href="source.html" class="active">資料來源</a>
+            </div>
+        </div>
 
-        <h1>台海戰爭逃報報 資料來源一覽</h1>
+        <div class="main-content">
+            <h1>資料來源</h1>
 
-        <div class="highlight">
+            <div class="intro">
             本 App 部分內容係以政府公開資料重新整理、加值後提供。<br>
             依「政府資料開放授權條款－第 1 版」規定，特此列示各資料集來源與用途，並聲明本 App 之呈現方式不代表原提供機關立場。
         </div>
 
-        <table>
+        <div class="table-container">
+            <table>
             <thead>
                 <tr>
                     <th style="width: 3%">#</th>
@@ -134,228 +281,230 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>桃園市防空疏散避難設施</td>
-                    <td>2025 (114 年)</td>
-                    <td>桃園市政府警察局</td>
-                    <td>顯示桃園市避難所清單與座標</td>
-                    <td><a href="https://data.gov.tw/dataset/151818" target="_blank">https://data.gov.tw/dataset/151818</a></td>
-                    <td>政府資料開放授權條款－第 1 版</td>
+                    <td data-label="#">1</td>
+                    <td data-label="資料集名稱">桃園市防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025 (114 年)</td>
+                    <td data-label="提供機關">桃園市政府警察局</td>
+                    <td data-label="主要用途">顯示桃園市避難所清單與座標</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151818" target="_blank">https://data.gov.tw/dataset/151818</a></td>
+                    <td data-label="授權">政府資料開放授權條款－第 1 版</td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>內政部警政署管制清冊（苗栗縣防空疏散避難設施位置）</td>
-                    <td>2024</td>
-                    <td>苗栗縣警察局</td>
-                    <td>顯示苗栗縣避難所清單與座標</td>
-                    <td><a href="https://data.gov.tw/dataset/171682" target="_blank">https://data.gov.tw/dataset/171682</a></td>
-                    <td>同上</td>
+                    <td data-label="#">2</td>
+                    <td data-label="資料集名稱">內政部警政署管制清冊（苗栗縣防空疏散避難設施位置）</td>
+                    <td data-label="年度/版本">2024</td>
+                    <td data-label="提供機關">苗栗縣警察局</td>
+                    <td data-label="主要用途">顯示苗栗縣避難所清單與座標</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/171682" target="_blank">https://data.gov.tw/dataset/171682</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>臺東縣防空疏散避難設施位置</td>
-                    <td>2025</td>
-                    <td>臺東縣警察局民防管制中心</td>
-                    <td>顯示臺東縣避難所清單、容量</td>
-                    <td><a href="https://data.gov.tw/dataset/173142" target="_blank">https://data.gov.tw/dataset/173142</a></td>
-                    <td>同上</td>
+                    <td data-label="#">3</td>
+                    <td data-label="資料集名稱">臺東縣防空疏散避難設施位置</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">臺東縣警察局民防管制中心</td>
+                    <td data-label="主要用途">顯示臺東縣避難所清單、容量</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/173142" target="_blank">https://data.gov.tw/dataset/173142</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td>連江縣防空疏散避難設施位置</td>
-                    <td>2022</td>
-                    <td>連江縣政府</td>
-                    <td>顯示連江縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151745" target="_blank">https://data.gov.tw/dataset/151745</a></td>
-                    <td>同上</td>
+                    <td data-label="#">4</td>
+                    <td data-label="資料集名稱">連江縣防空疏散避難設施位置</td>
+                    <td data-label="年度/版本">2022</td>
+                    <td data-label="提供機關">連江縣政府</td>
+                    <td data-label="主要用途">顯示連江縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151745" target="_blank">https://data.gov.tw/dataset/151745</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td>彰化縣防空疏散避難設施位置</td>
-                    <td>2025</td>
-                    <td>彰化縣警察局</td>
-                    <td>顯示彰化縣避難所清單與容量</td>
-                    <td><a href="https://data.gov.tw/dataset/151769" target="_blank">https://data.gov.tw/dataset/151769</a></td>
-                    <td>同上</td>
+                    <td data-label="#">5</td>
+                    <td data-label="資料集名稱">彰化縣防空疏散避難設施位置</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">彰化縣警察局</td>
+                    <td data-label="主要用途">顯示彰化縣避難所清單與容量</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151769" target="_blank">https://data.gov.tw/dataset/151769</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td>宜蘭縣防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>宜蘭縣政府</td>
-                    <td>顯示宜蘭縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151608" target="_blank">https://data.gov.tw/dataset/151608</a></td>
-                    <td>同上</td>
+                    <td data-label="#">6</td>
+                    <td data-label="資料集名稱">宜蘭縣防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">宜蘭縣政府</td>
+                    <td data-label="主要用途">顯示宜蘭縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151608" target="_blank">https://data.gov.tw/dataset/151608</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>7</td>
-                    <td>澎湖縣防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>澎湖縣政府</td>
-                    <td>顯示澎湖縣避難所清單、設備資訊</td>
-                    <td><a href="https://data.gov.tw/dataset/150913" target="_blank">https://data.gov.tw/dataset/150913</a></td>
-                    <td>同上</td>
+                    <td data-label="#">7</td>
+                    <td data-label="資料集名稱">澎湖縣防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">澎湖縣政府</td>
+                    <td data-label="主要用途">顯示澎湖縣避難所清單、設備資訊</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/150913" target="_blank">https://data.gov.tw/dataset/150913</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>8</td>
-                    <td>屏東縣防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>屏東縣政府警察局</td>
-                    <td>顯示屏東縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151578" target="_blank">https://data.gov.tw/dataset/151578</a></td>
-                    <td>同上</td>
+                    <td data-label="#">8</td>
+                    <td data-label="資料集名稱">屏東縣防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">屏東縣政府警察局</td>
+                    <td data-label="主要用途">顯示屏東縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151578" target="_blank">https://data.gov.tw/dataset/151578</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>9</td>
-                    <td>新竹縣防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>新竹縣政府警察局</td>
-                    <td>顯示新竹縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/109340" target="_blank">https://data.gov.tw/dataset/109340</a></td>
-                    <td>同上</td>
+                    <td data-label="#">9</td>
+                    <td data-label="資料集名稱">新竹縣防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">新竹縣政府警察局</td>
+                    <td data-label="主要用途">顯示新竹縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/109340" target="_blank">https://data.gov.tw/dataset/109340</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>10</td>
-                    <td>嘉義市防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>嘉義市政府</td>
-                    <td>顯示嘉義市避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151561" target="_blank">https://data.gov.tw/dataset/151561</a></td>
-                    <td>同上</td>
+                    <td data-label="#">10</td>
+                    <td data-label="資料集名稱">嘉義市防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">嘉義市政府</td>
+                    <td data-label="主要用途">顯示嘉義市避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151561" target="_blank">https://data.gov.tw/dataset/151561</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>11</td>
-                    <td>新北市防空疏散避難設施數量及容量</td>
-                    <td>2025</td>
-                    <td>新北市政府警察局</td>
-                    <td>顯示新北市避難所清單與容量</td>
-                    <td><a href="https://data.gov.tw/dataset/123701" target="_blank">https://data.gov.tw/dataset/123701</a></td>
-                    <td>同上</td>
+                    <td data-label="#">11</td>
+                    <td data-label="資料集名稱">新北市防空疏散避難設施數量及容量</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">新北市政府警察局</td>
+                    <td data-label="主要用途">顯示新北市避難所清單與容量</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/123701" target="_blank">https://data.gov.tw/dataset/123701</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>12</td>
-                    <td>基隆市防空疏散避難設施公告</td>
-                    <td>2024</td>
-                    <td>基隆市警察局</td>
-                    <td>顯示基隆市避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/167234" target="_blank">https://data.gov.tw/dataset/167234</a></td>
-                    <td>同上</td>
+                    <td data-label="#">12</td>
+                    <td data-label="資料集名稱">基隆市防空疏散避難設施公告</td>
+                    <td data-label="年度/版本">2024</td>
+                    <td data-label="提供機關">基隆市警察局</td>
+                    <td data-label="主要用途">顯示基隆市避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/167234" target="_blank">https://data.gov.tw/dataset/167234</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>13</td>
-                    <td>新竹市防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>新竹市警察局</td>
-                    <td>顯示新竹市避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/92430" target="_blank">https://data.gov.tw/dataset/92430</a></td>
-                    <td>同上</td>
+                    <td data-label="#">13</td>
+                    <td data-label="資料集名稱">新竹市防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">新竹市警察局</td>
+                    <td data-label="主要用途">顯示新竹市避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/92430" target="_blank">https://data.gov.tw/dataset/92430</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>14</td>
-                    <td>臺中市防空疏散避難設施位置（113 年版）</td>
-                    <td>2024 (113 年)</td>
-                    <td>臺中市政府警察局</td>
-                    <td>顯示臺中市避難所清單（最新版）</td>
-                    <td><a href="https://data.gov.tw/dataset/169476" target="_blank">https://data.gov.tw/dataset/169476</a></td>
-                    <td>同上</td>
+                    <td data-label="#">14</td>
+                    <td data-label="資料集名稱">臺中市防空疏散避難設施位置（113 年版）</td>
+                    <td data-label="年度/版本">2024 (113 年)</td>
+                    <td data-label="提供機關">臺中市政府警察局</td>
+                    <td data-label="主要用途">顯示臺中市避難所清單（最新版）</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/169476" target="_blank">https://data.gov.tw/dataset/169476</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>15</td>
-                    <td>南投縣防空疏散避難設施地點</td>
-                    <td>2025</td>
-                    <td>南投縣政府</td>
-                    <td>顯示南投縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151011" target="_blank">https://data.gov.tw/dataset/151011</a></td>
-                    <td>同上</td>
+                    <td data-label="#">15</td>
+                    <td data-label="資料集名稱">南投縣防空疏散避難設施地點</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">南投縣政府</td>
+                    <td data-label="主要用途">顯示南投縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151011" target="_blank">https://data.gov.tw/dataset/151011</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>16</td>
-                    <td>嘉義縣防空疏散避難設施</td>
-                    <td>2025</td>
-                    <td>嘉義縣警察局</td>
-                    <td>顯示嘉義縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/150915" target="_blank">https://data.gov.tw/dataset/150915</a></td>
-                    <td>同上</td>
+                    <td data-label="#">16</td>
+                    <td data-label="資料集名稱">嘉義縣防空疏散避難設施</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">嘉義縣警察局</td>
+                    <td data-label="主要用途">顯示嘉義縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/150915" target="_blank">https://data.gov.tw/dataset/150915</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>17</td>
-                    <td>臺南市防空疏散避難設施位置</td>
-                    <td>2025</td>
-                    <td>臺南市政府警察局</td>
-                    <td>顯示臺南市避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151677" target="_blank">https://data.gov.tw/dataset/151677</a></td>
-                    <td>同上</td>
+                    <td data-label="#">17</td>
+                    <td data-label="資料集名稱">臺南市防空疏散避難設施位置</td>
+                    <td data-label="年度/版本">2025</td>
+                    <td data-label="提供機關">臺南市政府警察局</td>
+                    <td data-label="主要用途">顯示臺南市避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151677" target="_blank">https://data.gov.tw/dataset/151677</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>18</td>
-                    <td>花蓮縣防空疏散避難處所</td>
-                    <td>2023</td>
-                    <td>花蓮縣警察局</td>
-                    <td>顯示花蓮縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/166468" target="_blank">https://data.gov.tw/dataset/166468</a></td>
-                    <td>同上</td>
+                    <td data-label="#">18</td>
+                    <td data-label="資料集名稱">花蓮縣防空疏散避難處所</td>
+                    <td data-label="年度/版本">2023</td>
+                    <td data-label="提供機關">花蓮縣警察局</td>
+                    <td data-label="主要用途">顯示花蓮縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/166468" target="_blank">https://data.gov.tw/dataset/166468</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>19</td>
-                    <td>臺北市防空疏散避難設施資料集</td>
-                    <td>2025 (114 年)</td>
-                    <td>臺北市政府警察局</td>
-                    <td>顯示臺北市避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151681" target="_blank">https://data.gov.tw/dataset/151681</a></td>
-                    <td>同上</td>
+                    <td data-label="#">19</td>
+                    <td data-label="資料集名稱">臺北市防空疏散避難設施資料集</td>
+                    <td data-label="年度/版本">2025 (114 年)</td>
+                    <td data-label="提供機關">臺北市政府警察局</td>
+                    <td data-label="主要用途">顯示臺北市避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151681" target="_blank">https://data.gov.tw/dataset/151681</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>20</td>
-                    <td>雲林縣警察局防空疏散避難設施一覽表</td>
-                    <td>2024</td>
-                    <td>雲林縣警察局</td>
-                    <td>顯示雲林縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/37544" target="_blank">https://data.gov.tw/dataset/37544</a></td>
-                    <td>同上</td>
+                    <td data-label="#">20</td>
+                    <td data-label="資料集名稱">雲林縣警察局防空疏散避難設施一覽表</td>
+                    <td data-label="年度/版本">2024</td>
+                    <td data-label="提供機關">雲林縣警察局</td>
+                    <td data-label="主要用途">顯示雲林縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/37544" target="_blank">https://data.gov.tw/dataset/37544</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>21</td>
-                    <td>高雄市 111 年防空疏散避難設施</td>
-                    <td>2022 (111 年)</td>
-                    <td>高雄市政府警察局</td>
-                    <td>顯示高雄市避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151751" target="_blank">https://data.gov.tw/dataset/151751</a></td>
-                    <td>同上</td>
+                    <td data-label="#">21</td>
+                    <td data-label="資料集名稱">高雄市 111 年防空疏散避難設施</td>
+                    <td data-label="年度/版本">2022 (111 年)</td>
+                    <td data-label="提供機關">高雄市政府警察局</td>
+                    <td data-label="主要用途">顯示高雄市避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151751" target="_blank">https://data.gov.tw/dataset/151751</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>22</td>
-                    <td>金門縣警察局防空疏散避難設施位置</td>
-                    <td>2024</td>
-                    <td>金門縣警察局</td>
-                    <td>顯示金門縣避難所清單</td>
-                    <td><a href="https://data.gov.tw/dataset/151006" target="_blank">https://data.gov.tw/dataset/151006</a></td>
-                    <td>同上</td>
+                    <td data-label="#">22</td>
+                    <td data-label="資料集名稱">金門縣警察局防空疏散避難設施位置</td>
+                    <td data-label="年度/版本">2024</td>
+                    <td data-label="提供機關">金門縣警察局</td>
+                    <td data-label="主要用途">顯示金門縣避難所清單</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/151006" target="_blank">https://data.gov.tw/dataset/151006</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>23</td>
-                    <td>臺中市防空疏散避難設施位置（112 年版）</td>
-                    <td>2023 (112 年)</td>
-                    <td>臺中市政府警察局</td>
-                    <td>與 113 年版比對，確保完整覆蓋</td>
-                    <td><a href="https://data.gov.tw/dataset/163849" target="_blank">https://data.gov.tw/dataset/163849</a></td>
-                    <td>同上</td>
+                    <td data-label="#">23</td>
+                    <td data-label="資料集名稱">臺中市防空疏散避難設施位置（112 年版）</td>
+                    <td data-label="年度/版本">2023 (112 年)</td>
+                    <td data-label="提供機關">臺中市政府警察局</td>
+                    <td data-label="主要用途">與 113 年版比對，確保完整覆蓋</td>
+                    <td data-label="資料集網址"><a href="https://data.gov.tw/dataset/163849" target="_blank">https://data.gov.tw/dataset/163849</a></td>
+                    <td data-label="授權">同上</td>
                 </tr>
                 <tr>
-                    <td>24</td>
-                    <td>OpenStreetMap Taiwan 地圖資料</td>
-                    <td>持續更新</td>
-                    <td>OpenStreetMap 社群貢獻者</td>
-                    <td>提供地圖底圖、道路網路、地標資訊</td>
-                    <td><a href="https://www.openstreetmap.org/" target="_blank">https://www.openstreetmap.org/</a></td>
-                    <td>ODbL 1.0</td>
+                    <td data-label="#">24</td>
+                    <td data-label="資料集名稱">OpenStreetMap Taiwan 地圖資料</td>
+                    <td data-label="年度/版本">持續更新</td>
+                    <td data-label="提供機關">OpenStreetMap 社群貢獻者</td>
+                    <td data-label="主要用途">提供地圖底圖、道路網路、地標資訊</td>
+                    <td data-label="資料集網址"><a href="https://www.openstreetmap.org/" target="_blank">https://www.openstreetmap.org/</a></td>
+                    <td data-label="授權">ODbL 1.0</td>
                 </tr>
             </tbody>
-        </table>
+            </table>
+        </div>
 
         <div class="note">
             <strong>備考</strong><br>
             • 資料授權均為「政府資料開放授權條款－第 1 版」(<a href="https://data.gov.tw/license" target="_blank">https://data.gov.tw/license</a>)。<br>
             • 台海戰爭逃報報已統整、清洗並重新格式化上述資料，處理結果不代表原提供機關立場。
+            </div>
         </div>
     </div>
 </body>
