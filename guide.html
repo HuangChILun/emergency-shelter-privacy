@@ -5,35 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台海戰爭逃報報｜使用說明</title>
     <style>
-        body{line-height:1.7;max-width:860px;margin:0 auto;padding:24px;background:#f5f7fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;}
-        .container{background:#fff;padding:36px 40px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.06)}
-        .navigation{background:#2d8cf0;padding:18px;border-radius:8px;margin-bottom:28px;text-align:center}
-        .navigation a{color:#fff;text-decoration:none;margin:0 18px;font-weight:600;padding:8px 18px;border-radius:4px;transition:background-color .25s}
-        .navigation a:hover{background:rgba(255,255,255,.18)}
-        .navigation a.active{background:rgba(255,255,255,.32)}
-        h1{color:#2c3e50;text-align:center;border-bottom:3px solid #3498db;padding-bottom:10px}
-        h2{color:#34495e;margin-top:30px;border-left:4px solid #3498db;padding-left:15px}
-        table{width:100%;border-collapse:collapse;margin:15px 0}
-        th,td{border:1px solid #ddd;padding:12px;text-align:left}
-        th{background-color:#f2f2f2;font-weight:bold}
-        .highlight{background-color:#e8f4f8;padding:15px;border-radius:5px;margin:15px 0;border-left:4px solid #3498db}
-        .disclaimer{background:#fff3cd;border:1px solid #ffeaa7;padding:20px;border-radius:8px;margin:20px 0}
-        a{color:#3498db;text-decoration:none}
-        a:hover{text-decoration:underline}
-        code{background-color:#f1f1f1;padding:2px 6px;border-radius:3px;font-family:'Courier New',monospace}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #f6f6f0;
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        /* Header with navigation */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .navigation a:hover,
+        .navigation a.active {
+            color: #000;
+            border-bottom-color: #ff6600;
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .intro {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            margin-top: 28px;
+            margin-bottom: 16px;
+            letter-spacing: -0.2px;
+        }
+
+        p, li {
+            color: #333;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        ol, ul {
+            padding-left: 28px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        /* Table styling */
+        .table-container {
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #fff;
+            font-size: 13px;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        thead th {
+            background: #f8f8f8;
+            color: #666;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 15px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.1s ease;
+        }
+
+        tbody tr:hover {
+            background: #fafafa;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 12px;
+            vertical-align: top;
+            border: none;
+        }
+
+        .highlight {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 24px 0;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .disclaimer {
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 30px 0;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .disclaimer strong {
+            color: #f57c00;
+            font-weight: 600;
+        }
+
+        /* Links */
+        a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+
+            .header,
+            .main-content {
+                padding: 20px;
+            }
+
+            .navigation {
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            thead th,
+            td {
+                padding: 10px 8px;
+            }
+
+            .intro,
+            .highlight,
+            .disclaimer {
+                padding: 15px;
+            }
+        }
+
+        /* Clean table for mobile */
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #e5e5e5;
+                margin-bottom: 10px;
+                padding: 15px;
+                border-radius: 6px;
+                background: #fff;
+            }
+
+            td {
+                border: none;
+                position: relative;
+                padding: 8px 0;
+            }
+
+            td:before {
+                content: attr(data-label) ": ";
+                font-weight: 600;
+                color: #666;
+                display: inline-block;
+                width: 120px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-<div class="navigation">
-    <a href="privacy.html">隱私政策</a>
-    <a href="service_agreement.html">服務條款</a>
-    <a href="guide.html">使用說明</a>
-    <a href="source.html">資料來源</a>
-</div>
+        <div class="header">
+            <a href="index.html" class="nav-brand">台海戰爭逃報報</a>
+            <div class="navigation">
+                <a href="index.html">首頁</a>
+                <a href="privacy.html">隱私政策</a>
+                <a href="service_agreement.html">服務條款</a>
+                <a href="guide.html" class="active">使用說明</a>
+                <a href="source.html">資料來源</a>
+            </div>
+        </div>
 
-
-  <h1>台海戰爭逃報報 使用說明</h1>
+        <div class="main-content">
+            <h1>台海戰爭逃報報 使用說明</h1>
      <div class="disclaimer" style="margin-top:0;">
         <h2>⚠️ 非政府官方應用程式</h2>
         <p>「台海戰爭逃報報」由民間團隊開發，與任何政府機構無隸屬或授權關係。所有資訊僅供參考，最終以政府官方最新公告為準。本頁提供 App 使用說明。</p>
@@ -44,8 +310,7 @@
 
     <h2>1. 首次啟用</h2>
     <ol>
-        <li>安裝並開啟 App，可選擇<strong>「Google 登入」</strong>或<strong>「離線使用」</strong>。</li>
-        <li><strong>強烈建議：</strong>初次請務必使用 Google 帳戶登入，以利 App 下載最新的避難所資料，獲得最佳體驗。</li>
+        <li>安裝並開啟 App，可選擇<strong>「Google 登入」</strong>或<strong>「訪客登入」</strong>。</li>
         <li>系統將提示授權「位置」與「推播」權限，此為<strong>選擇性</strong>授權：
             <ul>
                 <li><strong>允許位置：</strong>可即時計算您與最近避難所的距離。您的位置數據僅用於 App 內計算，我們絕不會收集您的個人位置數據。</li>
@@ -54,15 +319,62 @@
         </li>
     </ol>
 
-    <h2>2. 下載／更新離線資料</h2>
+    <h2>2. 桌面小工具 <span style="background: linear-gradient(135deg, #ff6b6b, #ee5a6f); color: white; padding: 4px 12px; border-radius: 6px; font-size: 14px; font-weight: 700; margin-left: 8px;">測試版 BETA</span></h2>
+    <p>在 2.0.1 版本以後，我們新增了桌面小工具功能，讓您無需開啟 App 即可快速查看最新資訊：</p>
+
+    <div class="highlight" style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-left-color: #ab47bc;">
+        <h3 style="margin-top: 0; color: #6a1b9a; font-size: 18px;">📱 小工具功能</h3>
+        <ul style="margin-bottom: 0;">
+            <li><strong>台海風險分析：</strong>顯示當前風險等級與簡要摘要</li>
+            <li><strong>美國對台旅遊警示：</strong>顯示最新警示等級與顏色</li>
+            <li><strong>即時更新：</strong>小工具會自動同步最新資訊</li>
+        </ul>
+    </div>
+
+    <h3>📲 iOS 添加步驟（iOS 14 以上）</h3>
+    <ol>
+        <li>在主畫面<strong>長按空白處</strong>，直到圖示開始晃動</li>
+        <li>點擊左上角的 <strong>「+」</strong> 符號</li>
+        <li>在小工具列表中找到<strong>「台海戰爭逃報報」</strong></li>
+        <li>選擇您想要的小工具樣式：
+            <ul>
+                <li><strong>小型：</strong>顯示風險等級或旅遊警示</li>
+                <li><strong>中型：</strong>顯示詳細摘要資訊</li>
+                <li><strong>大型：</strong>同時顯示多項資訊</li>
+            </ul>
+        </li>
+        <li>點擊<strong>「加入小工具」</strong></li>
+        <li>拖曳小工具到想要的位置，點擊<strong>「完成」</strong></li>
+    </ol>
+
+    <h3>🤖 Android 添加步驟（Android 8.0 以上）</h3>
+    <ol>
+        <li>在主畫面<strong>長按空白處</strong></li>
+        <li>點擊<strong>「小工具」</strong>或<strong>「Widgets」</strong></li>
+        <li>向下滑動找到<strong>「台海戰爭逃報報」</strong></li>
+        <li>長按想要的小工具樣式，拖曳到主畫面</li>
+        <li>調整小工具大小與位置</li>
+        <li>放開手指完成添加</li>
+    </ol>
+
+    <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 20px 24px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #ff9800;">
+        <p style="margin-bottom: 8px;"><strong>💡 提示：</strong>點擊小工具即可快速開啟 App 查看完整資訊。如果小工具顯示異常，請嘗試移除後重新添加。</p>
+        <p style="margin: 0;"><strong>🐛 問題回報：</strong>若遇到任何問題，歡迎填寫<a href="https://forms.gle/8tRj1aaQL3oxJicV7" target="_blank" style="color: #f57c00; font-weight: 700;">問題反饋表單</a>通知我們，感謝您的協助！</p>
+    </div>
+
+    <h2>3. 下載／更新離線資料</h2>
     <p>點擊首頁右上角「刷新」圖示可手動更新避難所清單（一天最多更新一次）。</p>
-    <div class="highlight" style="background-color: #fffbe6; border-left-color: #f9ca24;">
-        <strong>資料來源備註：</strong><br>
-        由於部分縣市官方未提供完整資料，您可能會發現該地區的避難所資訊不齊全，例如缺少「容納人數」、「所在樓層」或「精確經緯度」等欄位。此為來源資料限制，敬請見諒。
+    <div class="highlight" style="background: linear-gradient(135deg, #fff9e6 0%, #fffbe6 100%); border-left-color: #f9ca24;">
+        <strong>📍 資料來源備註：</strong><br>
+        <ul style="margin-top: 12px; margin-bottom: 0;">
+            <li>由於部分縣市官方未提供完整資料，您可能會發現該地區的避難所資訊不齊全，例如缺少「容納人數」、「所在樓層」或「精確經緯度」等欄位。</li>
+            <li><strong>位置誤差說明：</strong>部分地點由於政府提供的經緯度有誤，反應的位置可能有些微誤差，有可能會出現在奇怪的位置。</li>
+            <li><strong>通報協助：</strong>如發現位置明顯錯誤，歡迎透過 <a href="mailto:thomas.huang.ai@gmail.com">thomas.huang.ai@gmail.com</a> 或<a href="https://forms.gle/8tRj1aaQL3oxJicV7" target="_blank">問題反饋表單</a>與我們通報，我們會確認實際地點是否有誤後進行更改，感謝您的幫忙！</li>
+        </ul>
     </div>
 
 
-    <h2>3. 地圖與卡片操作</h2>
+    <h2>4. 地圖與卡片操作</h2>
     <table>
         <thead>
             <tr>
@@ -72,50 +384,76 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>點擊避難所圖標</strong></td>
-                <td>展開卡片，顯示容量、地址、分局等資訊</td>
+                <td data-label="手勢/按鈕"><strong>點擊避難所圖標</strong></td>
+                <td data-label="效果">展開卡片，顯示容量、地址、分局等資訊</td>
             </tr>
             <tr>
-                <td><strong>向上滑卡片</strong></td>
-                <td>查看更詳細欄位（樓層、備註）</td>
+                <td data-label="手勢/按鈕"><strong>向上滑卡片</strong></td>
+                <td data-label="效果">查看更詳細欄位（樓層、備註）</td>
             </tr>
             <tr>
-                <td><strong>點擊「導航」</strong></td>
-                <td>透過預設地圖 App 前往地點</td>
+                <td data-label="手勢/按鈕"><strong>點擊「導航」</strong></td>
+                <td data-label="效果">透過預設地圖 App 前往地點</td>
             </tr>
         </tbody>
     </table>
 
-<!--     <div class="highlight">
-        <strong>付費版功能</strong><br>
-        若升級 Premium，可啟用：
-        <ul>
-            <li><strong>免廣告</strong></li>
-            <li><strong>資訊中心</strong>：獲取國外權威新聞摘要與標題，讓您能簡單了解趨勢</li>
-        </ul>
-    </div> -->
+    <h2>5. 訂閱功能</h2>
+    <p>本 App 提供兩種訂閱方案，幫助您更深入掌握台海局勢與風險變化：</p>
 
-    <h2>4. 旅遊警示＆推播</h2>
+    <div class="highlight" style="background: linear-gradient(135deg, #e3f2fd 0%, #e1f5fe 100%); border-left-color: #42a5f5;">
+        <h3 style="margin-top: 0; color: #1565c0; font-size: 20px;">🎯 台海風險分析</h3>
+        <p style="margin-bottom: 12px;">提供每天更新的台海風險判斷，協助您掌握最新局勢發展。</p>
+        <ul style="margin-bottom: 8px;">
+            <li><strong>分析範圍：</strong>包括軍演活動、外交動態、軍事行動、國際保險與金流相關的判斷分析、國際新聞消息等</li>
+            <li><strong>更新頻率：</strong>每日更新風險等級與分析摘要</li>
+            <li><strong>即時通知：</strong>當風險等級達到「罕見活躍」時，系統會立即推播通知使用者</li>
+            <li><strong>風險等級：</strong>從低到高依序為：正常 → 關注 → 活躍 → 罕見活躍</li>
+        </ul>
+    </div>
+
+    <div class="highlight" style="background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%); border-left-color: #66bb6a;">
+        <h3 style="margin-top: 0; color: #2e7d32; font-size: 20px;">📰 資訊中心</h3>
+        <p style="margin-bottom: 12px;">提供最近兩週內的海外新聞摘要與完整連結，幫助您快速瞭解台海現況。</p>
+        <ul style="margin-bottom: 0;">
+            <li><strong>資料來源：</strong>僅提供非常高信任度的美國主流媒體，如 Reuters（路透社）、Financial Times（金融時報）等</li>
+            <li><strong>更新頻率：</strong>每48小時更新一次(可能變動時間為24-48小時之間)，涵蓋最近1-2周的重要新聞</li>
+            <li><strong>使用方式：</strong>點擊資訊中心即可前往完整報導</li>
+        </ul>
+    </div>
+
+    <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 20px 24px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #ff9800;">
+        <p style="margin: 0;"><strong>💡 訂閱管理：</strong>iOS 請至「設定 → Apple ID → 訂閱項目」，Android 請至 Google Play → 付款與訂閱 → 訂閱。</p>
+    </div>
+
+    <h2>6. 旅遊警示＆推播</h2>
     <ul>
         <li>系統每 15 分鐘檢查一次官方旅遊警示。</li>
         <li>一旦等級變化，App 會推播通知並顯示對應顏色。</li>
         <li>您可在 <strong>設定 → 通知設定</strong> 關閉一般推播。</li>
     </ul>
 
-    <h2>5. 常見問題</h2>
+    <h2>7. 常見問題</h2>
     
     <h3>Q1. 為何看不到任何避難所？</h3>
     <p>請先確認已下載該縣市資料；若無，請嘗試切換網路（如 Wi-Fi/行動網路），並回到首頁點擊右上角「刷新」圖示再次嘗試。</p>
 
-    <h3>Q2. 付費後在哪裡取消？</h3>
-    <p>iOS 請至「設定 → Apple ID → 訂閱項目」，Android 請至 Google Play → 付款與訂閱 → 訂閱。</p>
-
-    <h3>Q3. App 找不到我的位置，或找不到最近的避難所？</h3>
+    <h3>Q2. App 找不到我的位置，或找不到最近的避難所？</h3>
     <p>請點擊地圖頁面右上方的「定位」圖示，系統會嘗試重新抓取您目前的位置。如果沒有作用，請等待幾秒鐘後再試一次，或至手機「設定」確認是否已開啟 App 的位置權限。</p>
+
+    <h3>Q3. 如何添加桌面小工具？</h3>
+    <p>請參閱上方<strong>「2. 桌面小工具」</strong>章節，內有詳細的 iOS 與 Android 添加步驟說明。</p>
+
+    <h3>Q4. 訂閱後如何取消？</h3>
+    <p>iOS 請至「設定 → Apple ID → 訂閱項目」，Android 請至 Google Play → 付款與訂閱 → 訂閱。詳情請參閱<strong>「5. 訂閱功能」</strong>章節。</p>
+
+    <h3>Q5. 避難所位置顯示不正確怎麼辦？</h3>
+    <p>部分地點可能因政府提供的經緯度有誤而位置不準確。如發現明顯錯誤，歡迎透過 <a href="mailto:thomas.huang.ai@gmail.com">thomas.huang.ai@gmail.com</a> 或<a href="https://forms.gle/8tRj1aaQL3oxJicV7" target="_blank">問題反饋表單</a>與我們通報，我們會盡快確認並更正。</p>
 
     <div class="highlight">
         更多疑問請來信：<a href="mailto:thomas.huang.ai@gmail.com">thomas.huang.ai@gmail.com</a>
     </div>
-</div>
+        </div>
+    </div>
 </body>
 </html>
