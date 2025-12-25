@@ -107,6 +107,17 @@
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
+
+        /* FAQ Accordion */
+        .faq-content {
+            display: none;
+        }
+        .open .faq-content {
+            display: block;
+        }
+        .open button i[data-lucide="chevron-down"] {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-primary-100 selection:text-primary-700">
@@ -137,6 +148,7 @@
                     <li><a href="guide.html" class="block text-slate-600 font-medium">使用說明</a></li>
                     <li><a href="privacy.html" class="block text-slate-600 font-medium">隱私政策</a></li>
                     <li><a href="service_agreement.html" class="block text-slate-600 font-medium">服務條款</a></li>
+                    <li><a href="source.html" class="block text-slate-600 font-medium">資料來源</a></li>
                 </ul>
             </div>
         </div>
@@ -299,10 +311,120 @@
         </div>
     </section>
 
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-white" id="faq">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-primary-600 font-bold tracking-wider uppercase text-sm mb-2 block">FAQ</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">常見問題</h2>
+                <p class="text-slate-600">關於 App 使用與風險評估，您可能想知道的事</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
+                        <h3 class="text-lg font-bold text-slate-900">台海風險評估的判斷依據是什麼？為什麼可靠？</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <div class="prose prose-slate max-w-none text-sm leading-relaxed">
+                            <p class="text-slate-700 mb-4">
+                                我們的核心邏輯只有一個：<strong class="text-slate-900">過濾掉廉價的網路輿論，只相信有「成本」與「責任」的硬指標。</strong>
+                            </p>
+                            <p class="text-slate-600 mb-4">
+                                新聞媒體有時會放大緊張氣氛，但保險公司和航空公司不會拿鉅額的營運成本開玩笑。若風險真的升高，這些機構會立刻反映在成本上。我們追蹤的是這些有實際成本與責任的官方與金融指標，而不是網路風向或情緒輿論。
+                            </p>
+                            <p class="text-slate-600 mb-6">
+                                目前系統主要針對未來約 1–2 週內的短期風險做分析。在這個時間範圍內，大規模軍事行動必須有物資調動、禁航公告等前置作業，這些是藏不住的客觀訊號。我們不猜測長期的政治意圖，只看當下的物理與金流證據。我們也持續加強分析能力，目標是將有效參考期延長至 3–4 週。
+                            </p>
+
+                            <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs">$</span>
+                                金流指標（最誠實的訊號）
+                            </h4>
+                            <p class="text-slate-600 mb-4 pl-8">
+                                觀察倫敦保險市場 (JWC) 戰爭風險清單與航空戰爭險費率的變動。若風險真的升高，保險公司會是第一個反應成本的——他們不會拿鉅額的營運成本開玩笑。我們也參考 Polymarket 等預測市場的實時數據，參與者必須投入真金白銀，比口頭評論更可靠。
+                            </p>
+
+                            <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs">§</span>
+                                法規指標（官方認定）
+                            </h4>
+                            <p class="text-slate-600 mb-4 pl-8">
+                                美國 FAA 的禁飛令與各國旅遊警示的具體措辭變化。當美國國務院、日本外務省出現「建議撤離」或「避免所有旅行」這種關鍵訊號時，代表官方已認定安全風險提高。
+                            </p>
+
+                            <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs">◎</span>
+                                實體指標（物理證據）
+                            </h4>
+                            <p class="text-slate-600 mb-4 pl-8">
+                                異常的軍事動態與衛星證據。我們不是只看每天幾架，而是看演習規模是否放大、範圍與科目是否異常。高解析度商業衛星（如 Maxar）已能清楚觀測港口船艦集結、臨時設施搭建等跨海作戰準備——這是大規模軍事行動無法隱藏的前置作業。
+                            </p>
+
+                            <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs">✓</span>
+                                高可信度媒體佐證
+                            </h4>
+                            <p class="text-slate-600 pl-8">
+                                僅採納編採標準極嚴格的一線媒體（如 Reuters、FT、WSJ）基於衛星照片或官方文件的調查報導，過濾假消息干擾。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
+                        <h3 class="text-lg font-bold text-slate-900">這個評估有什麼限制？</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <div class="prose prose-slate max-w-none text-sm leading-relaxed text-slate-600">
+                            <p class="mb-3">
+                                我們誠實說明：系統無法掌握政府內部的秘密決策，也無法預測突發的黑天鵝事件。
+                            </p>
+                            <p>
+                                因此這個系統<strong class="text-slate-900">不能被視為絕對保證安全或危險的結論</strong>，但它能幫使用者從大量雜訊中過濾，提供當下最客觀的風險評估，作為安排生活與下一步決策的參考依據。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
+                        <h3 class="text-lg font-bold text-slate-900">沒有網路的時候可以用嗎？</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <div class="prose prose-slate max-w-none text-sm leading-relaxed text-slate-600">
+                            <p>
+                                <strong class="text-slate-900">可以。</strong>避難所地點只要打開過一次，就能完整離線使用。離線地圖已包含在 App 下載檔案內，無需額外下載。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
+                        <h3 class="text-lg font-bold text-slate-900">避難所位置跟實際地點有點差異？</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <div class="prose prose-slate max-w-none text-sm leading-relaxed text-slate-600">
+                            <p>
+                                部分地區因政府提供的經緯度資料有偏差，可能導致地圖上的避難所位置與實際位置略有差距（例如顯示在對面）。我們會持續根據用戶回報修正並釋出更新。目前避難所資料版本為 <strong class="text-slate-900">3.0</strong>。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold mb-8">
-                <i data-lucide="flame" class="w-4 h-4"></i> 已超過一萬一千位用戶加入
+                <i data-lucide="flame" class="w-4 h-4"></i> 已超過一萬二千位用戶加入
             </div>
             <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">立即下載，為安全做好準備</h2>
             <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
