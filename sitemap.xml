@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://safetw.app/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://safetw.app/guide.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://safetw.app/source.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://safetw.app/privacy.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://safetw.app/service_agreement.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <priority>0.4</priority>
+  </url>
+</urlset>

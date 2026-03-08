@@ -7,13 +7,88 @@
 
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
+    <link rel="canonical" href="https://safetw.app/">
 
     <meta name="description" content="台海戰爭逃報報提供全台防空避難所位置查詢與美國對台旅遊警示即時通知，讓您在關鍵時刻做出正確決策。">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="台海戰爭逃報報 - 守護您的安全">
     <meta property="og:description" content="第一時間得知台海戰爭即時資訊，並即時逃離戰區。全台防空避難所查詢與旅遊警示通知。">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="https://safetw.app/logo.png">
+    <meta property="og:url" content="https://safetw.app/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="台海戰爭逃報報 - 守護您的安全">
+    <meta name="twitter:description" content="第一時間得知台海戰爭即時資訊，並即時逃離戰區。全台防空避難所查詢與旅遊警示通知。">
+    <meta name="twitter:image" content="https://safetw.app/logo.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "台海戰爭逃報報",
+          "url": "https://safetw.app",
+          "logo": "https://safetw.app/logo.png",
+          "description": "提供全台防空避難所位置查詢與美國對台旅遊警示即時通知"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "台海戰爭逃報報",
+          "operatingSystem": "iOS, Android",
+          "applicationCategory": "UtilitiesApplication",
+          "description": "台海戰爭逃報報提供全台防空避難所位置查詢與美國對台旅遊警示即時通知，讓您在關鍵時刻做出正確決策。",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TWD"
+          },
+          "installUrl": [
+            "https://apps.apple.com/app/id6748058851",
+            "https://play.google.com/store/apps/details?id=com.reavorse.evacalert"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "台海風險評估的判斷依據是什麼？為什麼可靠？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "我們過濾掉廉價的網路輿論，只相信有「成本」與「責任」的硬指標。追蹤倫敦保險市場戰爭風險清單、航空戰爭險費率、美國 FAA 禁飛令、各國旅遊警示措辭變化、異常軍事動態與衛星證據，以及 Polymarket 等預測市場的實時數據。僅採納 Reuters、FT、WSJ 等一線媒體的調查報導。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "這個評估有什麼限制？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "系統無法掌握政府內部的秘密決策，也無法預測突發的黑天鵝事件。這個系統不能被視為絕對保證安全或危險的結論，但它能幫使用者從大量雜訊中過濾，提供當下最客觀的風險評估，作為安排生活與下一步決策的參考依據。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "沒有網路的時候可以用嗎？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可以。避難所地點只要打開過一次，就能完整離線使用。離線地圖已包含在 App 下載檔案內，無需額外下載。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "避難所位置跟實際地點有點差異？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "部分地區因政府提供的經緯度資料有偏差，可能導致地圖上的避難所位置與實際位置略有差距。我們會持續根據用戶回報修正並釋出更新。目前避難所資料版本為 4.0。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -509,7 +584,7 @@
                     <div class="faq-content px-6 pb-6">
                         <div class="prose prose-slate max-w-none text-sm leading-relaxed text-slate-600">
                             <p>
-                                部分地區因政府提供的經緯度資料有偏差，可能導致地圖上的避難所位置與實際位置略有差距（例如顯示在對面）。我們會持續根據用戶回報修正並釋出更新。目前避難所資料版本為 <strong class="text-slate-900">3.0</strong>。
+                                部分地區因政府提供的經緯度資料有偏差，可能導致地圖上的避難所位置與實際位置略有差距（例如顯示在對面）。我們會持續根據用戶回報修正並釋出更新。目前避難所資料版本為 <strong class="text-slate-900">4.0</strong>。
                             </p>
                         </div>
                     </div>
@@ -522,7 +597,7 @@
     <section class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold mb-8">
-                <i data-lucide="flame" class="w-4 h-4"></i> 已超過一萬六千位用戶加入
+                <i data-lucide="flame" class="w-4 h-4"></i> 已超過一萬八千位用戶加入
             </div>
             <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">立即下載，為安全做好準備</h2>
             <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
@@ -530,13 +605,19 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://apps.apple.com/app/id6748058851" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl">
-                    <i data-lucide="apple" class="w-6 h-6 fill-current"></i>
-                    <span class="font-bold text-lg">App Store 下載</span>
+                <a href="https://apps.apple.com/app/id6748058851" target="_blank" class="w-full sm:w-auto group flex items-center justify-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl hover:bg-slate-800 transition-all hover:-translate-y-1 shadow-lg shadow-slate-200">
+                    <svg class="w-[45.1px] h-8 fill-current" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    <div class="text-left leading-none">
+                        <div class="text-[10px] font-medium opacity-80 mb-1">Download on the</div>
+                        <div class="text-lg font-bold">App Store</div>
+                    </div>
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.reavorse.evacalert" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-primary-600 text-white px-8 py-4 rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl shadow-orange-200">
-                    <i data-lucide="play" class="w-6 h-6 fill-current"></i>
-                    <span class="font-bold text-lg">Google Play 下載</span>
+                <a href="https://play.google.com/store/apps/details?id=com.reavorse.evacalert" target="_blank" class="w-full sm:w-auto group flex items-center justify-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl hover:bg-slate-800 transition-all hover:-translate-y-1 shadow-lg shadow-slate-200">
+                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                    <div class="text-left leading-none">
+                        <div class="text-[10px] font-medium opacity-80 mb-1">GET IT ON</div>
+                        <div class="text-lg font-bold">Google Play</div>
+                    </div>
                 </a>
             </div>
         </div>
