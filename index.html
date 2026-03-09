@@ -233,6 +233,31 @@
         .open button i[data-lucide="chevron-down"] {
             transform: rotate(180deg);
         }
+
+        /* Mobile responsive */
+        @media (max-width: 640px) {
+            .iphone-mockup {
+                width: 260px;
+                height: 530px;
+                border-radius: 35px;
+                border-width: 6px;
+            }
+            .iphone-notch {
+                width: 100px;
+                height: 22px;
+            }
+            .mockup-screen {
+                padding: 30px 8px 8px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .iphone-mockup {
+                width: 230px;
+                height: 470px;
+                border-radius: 30px;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-primary-100 selection:text-primary-700">
