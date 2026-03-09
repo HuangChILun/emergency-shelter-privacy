@@ -134,7 +134,7 @@
         .iphone-mockup {
             position: relative;
             width: 300px;
-            height: 600px;
+            height: 610px;
             background: #1e293b;
             border-radius: 40px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -163,6 +163,29 @@
             align-items: center;
             justify-content: center;
             position: relative;
+        }
+
+        /* Mockup screen transitions */
+        .mockup-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 36px 10px 10px;
+            background: #f8f9fa;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .mockup-screen::-webkit-scrollbar { display: none; }
+
+        @keyframes clickHintPulse {
+            0%, 100% { opacity: 1; transform: translateX(0); }
+            50% { opacity: 0.5; transform: translateX(-4px); }
         }
 
         /* 動畫 */
@@ -265,130 +288,462 @@
             </div>
 
             <div class="flex justify-center fade-in-up delay-200">
+                <div style="position: relative; display: inline-block;">
                 <div class="iphone-mockup">
                     <div class="iphone-notch"></div>
-                    <div class="iphone-screen" style="justify-content: flex-start; padding: 36px 10px 10px; background: #f8f9fa; overflow: hidden;">
-                        <!-- SafetyStatusCard 完整還原 -->
-                        <div class="w-full bg-white overflow-hidden" style="border-radius: 12px; border-left: 5px solid #273591; border: 1px solid #e9ecef; border-left: 5px solid #273591; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
-                            <!-- 主要警示區域 -->
-                            <div style="background: #EBF3FD; margin: 8px; padding: 10px; border-radius: 6px; text-align: center;">
-                                <div style="font-size: 11px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px;">美國對台旅遊警示參考資訊 🔵</div>
-                                <div style="font-size: 10px; font-weight: 600; color: #273591;">參考等級：Level 1</div>
-                            </div>
-                            <!-- 等級說明 -->
-                            <div style="background: #fafbfc; margin: 0 8px 6px; border-radius: 6px; border: 1px solid #e9ecef; overflow: hidden;">
-                                <div style="background: #f0f4f8; padding: 6px 8px; display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="font-size: 9px; font-weight: 600; color: #495057;">等級參考說明</span>
-                                    <span style="font-size: 8px; color: #6c757d;">▼</span>
+                    <div class="iphone-screen" style="justify-content: flex-start; background: #f8f9fa; overflow: hidden; padding: 0;">
+
+                        <!-- ===== Home Screen ===== -->
+                        <div id="mockup-home" class="mockup-screen" style="transform: translateX(0);">
+
+                            <!-- 台海風險分析 Status Card -->
+                            <div class="w-full bg-white overflow-hidden" style="border-radius: 10px; border: 1px solid #e9ecef; border-left: 4px solid #22C55E; box-shadow: 0 2px 5px rgba(0,0,0,0.06); margin-bottom: 6px; padding: 8px 10px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <i data-lucide="trending-up" style="width: 12px; height: 12px; color: #166534;"></i>
+                                        <span style="font-size: 10px; font-weight: 700; color: #166534;">台海風險分析</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 4px; background: rgba(34,197,94,0.12); padding: 2px 8px; border-radius: 10px;">
+                                        <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E; display: inline-block;"></span>
+                                        <span style="font-size: 8px; font-weight: 700; color: #166534;">正常</span>
+                                    </div>
                                 </div>
-                                <div style="padding: 5px 8px 8px; font-size: 7px; color: #9ca3af;">點擊查看完整等級定義</div>
-                            </div>
-                            <!-- 來源頁尾 -->
-                            <div style="background: #f8fafe; margin: 0 8px 8px; padding: 7px 8px; border-radius: 5px; border: 1px solid #e3f2fd; display: flex; justify-content: space-between; align-items: center;">
-                                <div style="display: flex; align-items: center; gap: 5px;">
-                                    <span style="font-size: 8px; color: #1976d2; font-weight: 500;">來源: travel.state.gov</span>
-                                    <span style="font-size: 8px; color: #cbd5e1;">|</span>
-                                    <span style="font-size: 8px; color: #1976d2; font-weight: 500;">⟳ 剛剛更新</span>
+                                <div style="display: flex; gap: 2px; height: 4px; margin-bottom: 4px;">
+                                    <div style="flex: 1; background: #22C55E; border-radius: 2px;"></div>
+                                    <div style="flex: 1; background: rgba(234,179,8,0.2); border-radius: 2px;"></div>
+                                    <div style="flex: 1; background: rgba(249,115,22,0.2); border-radius: 2px;"></div>
+                                    <div style="flex: 1; background: rgba(220,38,38,0.2); border-radius: 2px;"></div>
                                 </div>
-                                <span style="font-size: 10px; color: #1976d2; font-weight: bold;">→</span>
+                                <div style="display: flex;">
+                                    <span style="flex: 1; font-size: 6px; text-align: center; color: #166534; font-weight: 700;">正常</span>
+                                    <span style="flex: 1; font-size: 6px; text-align: center; color: #9CA3AF;">觀察中</span>
+                                    <span style="flex: 1; font-size: 6px; text-align: center; color: #9CA3AF;">升高</span>
+                                    <span style="flex: 1; font-size: 6px; text-align: center; color: #9CA3AF;">高度警戒</span>
+                                </div>
                             </div>
+
+                            <!-- SafetyStatusCard -->
+                            <div class="w-full bg-white overflow-hidden" style="border-radius: 12px; border: 1px solid #e9ecef; border-left: 5px solid #273591; box-shadow: 0 3px 6px rgba(0,0,0,0.08);">
+                                <div style="background: #EBF3FD; margin: 8px; padding: 10px; border-radius: 6px; text-align: center;">
+                                    <div style="font-size: 11px; font-weight: 700; color: #1a1a1a; margin-bottom: 3px;">美國對台旅遊警示參考資訊 🔵</div>
+                                    <div style="font-size: 10px; font-weight: 600; color: #273591;">參考等級：Level 1</div>
+                                </div>
+                                <div style="background: #fafbfc; margin: 0 8px 6px; border-radius: 6px; border: 1px solid #e9ecef; overflow: hidden;">
+                                    <div style="background: #f0f4f8; padding: 6px 8px; display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-size: 9px; font-weight: 600; color: #495057;">等級參考說明</span>
+                                        <span style="font-size: 8px; color: #6c757d;">▼</span>
+                                    </div>
+                                    <div style="padding: 5px 8px 8px; font-size: 7px; color: #9ca3af;">點擊查看完整等級定義</div>
+                                </div>
+                                <div style="background: #f8fafe; margin: 0 8px 8px; padding: 7px 8px; border-radius: 5px; border: 1px solid #e3f2fd; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <span style="font-size: 8px; color: #1976d2; font-weight: 500;">來源: travel.state.gov</span>
+                                        <span style="font-size: 8px; color: #cbd5e1;">|</span>
+                                        <span style="font-size: 8px; color: #1976d2; font-weight: 500;">⟳ 剛剛更新</span>
+                                    </div>
+                                    <span style="font-size: 10px; color: #1976d2; font-weight: bold;">→</span>
+                                </div>
+                            </div>
+
+                            <!-- 快速存取標題 -->
+                            <div style="width: 100%; margin: 10px 0 6px; text-align: left; font-size: 11px; font-weight: 700; color: #333;">快速存取</div>
+
+                            <!-- FeatureCard Grid -->
+                            <div class="w-full grid grid-cols-2 gap-1.5">
+                                <!-- 台海風險（可點擊） -->
+                                <div onclick="showRiskDetail()" class="relative bg-white" style="cursor: pointer; border-radius: 10px; padding: 10px; border-left: 3px solid #DC2626; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between; transition: box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(220,38,38,0.2)'" onmouseout="this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'">
+                                    <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(220,38,38,0.1); display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="shield" class="w-3 h-3" style="color: #DC2626;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">台海風險</div>
+                                        <div style="font-size: 7px; color: #888;">深度分析報告</div>
+                                    </div>
+                                    <div style="position: absolute; top: 6px; right: 6px; background: #DC2626; color: white; padding: 1px 5px; border-radius: 4px; font-size: 6px; font-weight: 800;">PRO</div>
+                                </div>
+                                <!-- 資訊中心 -->
+                                <div class="bg-white" style="border-radius: 10px; padding: 10px; border-left: 3px solid #2563EB; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between;">
+                                    <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(37,99,235,0.1); display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="newspaper" class="w-3 h-3" style="color: #2563EB;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">資訊中心</div>
+                                        <div style="font-size: 7px; color: #888;">國際台海資訊</div>
+                                    </div>
+                                </div>
+                                <!-- 避難地圖 -->
+                                <div class="bg-white" style="border-radius: 10px; padding: 10px; border-left: 3px solid #059669; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between;">
+                                    <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(5,150,105,0.1); display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="map-pin" class="w-3 h-3" style="color: #059669;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">避難地圖</div>
+                                        <div style="font-size: 7px; color: #888;">最近距離 0.42 km</div>
+                                    </div>
+                                </div>
+                                <!-- 避難背包（可點擊） -->
+                                <div onclick="showScreen('gobag')" class="bg-white" style="cursor: pointer; border-radius: 10px; padding: 10px; border-left: 3px solid #059669; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between; transition: box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(5,150,105,0.2)'" onmouseout="this.style.boxShadow='0 2px 5px rgba(0,0,0,0.05)'">
+                                    <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(5,150,105,0.1); display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="package" class="w-3 h-3" style="color: #059669;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">避難背包</div>
+                                        <div style="font-size: 7px; color: #888;">管理避難物品</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 最近避難所標題 -->
+                            <div style="width: 100%; margin: 10px 0 6px; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 11px; font-weight: 700; color: #333;">最近避難所</span>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="font-size: 9px; color: #666;">查看地圖</span>
+                                    <i data-lucide="chevron-right" style="width: 11px; height: 11px; color: #666;"></i>
+                                </div>
+                            </div>
+
+                            <!-- ShelterCard（精簡版） -->
+                            <div class="w-full bg-white" style="border-radius: 10px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.08);">
+                                <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                                    <div style="width: 16px; height: 16px; margin-right: 5px; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="map-pin" style="width: 14px; height: 14px; color: #ff6b6b;"></i>
+                                    </div>
+                                    <span style="font-size: 11px; font-weight: 700; color: #333; flex: 1;">臺北市立中正國民中學</span>
+                                    <span style="background: #fff5f5; border: 1px solid #ffcccc; padding: 2px 6px; border-radius: 8px; font-size: 7px; color: #ff6b6b; font-weight: 600;">最近</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 4px; margin-bottom: 6px;">
+                                    <i data-lucide="map-pin" style="width: 10px; height: 10px; color: #666; flex-shrink: 0; margin-top: 1px;"></i>
+                                    <span style="font-size: 8px; color: #666; line-height: 1.3;">臺北市中正區愛國東路158號</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; background: #f8f9fa; padding: 5px 8px; border-radius: 5px;">
+                                    <span style="font-size: 8px; font-weight: 600; color: #ff6b6b;">距離：420m</span>
+                                    <span style="font-size: 8px; font-weight: 600; color: #2ed573;">步行時間：5分鐘</span>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <!-- 快速存取標題 -->
-                        <div style="width: 100%; margin: 10px 0 6px; text-align: left; font-size: 11px; font-weight: 700; color: #333;">快速存取</div>
+                        <!-- ===== Risk Detail Screen ===== -->
+                        <div id="mockup-risk" class="mockup-screen" style="transform: translateX(100%);">
 
-                        <!-- FeatureCard Grid 完整還原 -->
-                        <div class="w-full grid grid-cols-2 gap-1.5">
-                            <!-- 台海風險 -->
-                            <div class="relative bg-white" style="border-radius: 10px; padding: 10px; border-left: 3px solid #DC2626; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(220,38,38,0.1); display: flex; align-items: center; justify-content: center;">
-                                    <i data-lucide="shield" class="w-3 h-3" style="color: #DC2626;"></i>
-                                </div>
-                                <div>
-                                    <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">台海風險</div>
-                                    <div style="font-size: 7px; color: #888;">深度分析報告</div>
-                                </div>
-                                <div style="position: absolute; top: 6px; right: 6px; background: #DC2626; color: white; padding: 1px 5px; border-radius: 4px; font-size: 6px; font-weight: 800;">PRO</div>
+                            <!-- Header -->
+                            <div style="width: 100%; display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                                <span onclick="showHome()" style="cursor: pointer; font-size: 13px; color: #333; padding: 2px;">←</span>
+                                <span style="font-size: 11px; font-weight: 700; color: #333; flex: 1; text-align: center;">目前狀態：正常</span>
+                                <div style="background: #000; color: #FFD700; padding: 2px 6px; border-radius: 4px; font-size: 6px; font-weight: 800;">PRO</div>
                             </div>
-                            <!-- 資訊中心 -->
-                            <div class="bg-white" style="border-radius: 10px; padding: 10px; border-left: 3px solid #2563EB; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(37,99,235,0.1); display: flex; align-items: center; justify-content: center;">
-                                    <i data-lucide="newspaper" class="w-3 h-3" style="color: #2563EB;"></i>
+
+                            <!-- Main Risk Card -->
+                            <div style="width: 100%; background: white; border-radius: 10px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 12px; margin-bottom: 8px;">
+
+                                <!-- Risk Gauge -->
+                                <div style="text-align: center; margin-bottom: 10px;">
+                                    <div style="width: 56px; height: 56px; border-radius: 50%; border: 3px solid #22C55E; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(34,197,94,0.05); box-shadow: 0 4px 12px rgba(34,197,94,0.12);">
+                                        <span style="font-size: 11px; font-weight: 800; color: #166534;">正常</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">資訊中心</div>
-                                    <div style="font-size: 7px; color: #888;">國際台海資訊</div>
+
+                                <!-- Score Bar -->
+                                <div style="margin-bottom: 10px;">
+                                    <div style="display: flex; gap: 3px; height: 5px; margin-bottom: 3px;">
+                                        <div style="flex: 1; background: #22C55E; border-radius: 2px;"></div>
+                                        <div style="flex: 1; background: rgba(234,179,8,0.25); border-radius: 2px;"></div>
+                                        <div style="flex: 1; background: rgba(249,115,22,0.2); border-radius: 2px;"></div>
+                                        <div style="flex: 1; background: rgba(220,38,38,0.2); border-radius: 2px;"></div>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <span style="flex: 1; font-size: 6px; text-align: center; color: #166534; font-weight: 700;">正常</span>
+                                        <span style="flex: 1; font-size: 6px; text-align: center; color: #9CA3AF;">觀察中</span>
+                                        <span style="flex: 1; font-size: 6px; text-align: center; color: #9CA3AF;">升高</span>
+                                        <span style="flex: 1; font-size: 6px; text-align: center; color: #9CA3AF;">高度警戒</span>
+                                    </div>
+                                </div>
+
+                                <!-- Divider -->
+                                <div style="border-top: 1px solid #f0f0f0; margin-bottom: 8px;"></div>
+
+                                <!-- 總結 -->
+                                <div style="margin-bottom: 8px;">
+                                    <div style="font-size: 9px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">總結</div>
+                                    <div style="font-size: 7px; color: #4b5563; line-height: 1.6;">
+                                        目前台海情勢正常，短期內發生軍事衝突的可能性低。近期共機活動頻率下降、共艦數量維持基準，且無禁航區、撤僑或飛航限制等異常訊號出現。
+                                    </div>
+                                </div>
+
+                                <!-- Divider -->
+                                <div style="border-top: 1px solid #f0f0f0; margin-bottom: 8px;"></div>
+
+                                <!-- 更新時間 -->
+                                <div style="text-align: center; font-size: 7px; color: #9ca3af;">
+                                    更新時間：僅供示意
                                 </div>
                             </div>
-                            <!-- 避難地圖 -->
-                            <div class="bg-white" style="border-radius: 10px; padding: 10px; border-left: 3px solid #059669; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(5,150,105,0.1); display: flex; align-items: center; justify-content: center;">
-                                    <i data-lucide="map-pin" class="w-3 h-3" style="color: #059669;"></i>
+
+                            <!-- 資料來源 Card -->
+                            <div style="width: 100%; background: white; border-radius: 10px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 10px; margin-bottom: 8px;">
+                                <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 8px;">
+                                    <span style="font-size: 8px; color: #6b7280;">ⓘ</span>
+                                    <span style="font-size: 9px; font-weight: 700; color: #1a1a1a;">資料來源</span>
                                 </div>
-                                <div>
-                                    <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">避難地圖</div>
-                                    <div style="font-size: 7px; color: #888;">最近距離 0.42 km</div>
+
+                                <!-- 1. 軍事活動 (expanded, warning) -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">1.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">軍事活動監測</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <div style="display: flex; align-items: center; gap: 3px; background: rgba(245,158,11,0.12); padding: 2px 6px; border-radius: 8px;">
+                                                <span style="width: 5px; height: 5px; border-radius: 50%; background: #F59E0B;"></span>
+                                                <span style="font-size: 6px; font-weight: 600; color: #F59E0B;">注意</span>
+                                            </div>
+                                            <i data-lucide="chevron-up" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 6.5px; color: #6b7280; line-height: 1.5; margin-top: 4px;">
+                                        近一週共艦約 5–7 艘／日，共機多日為 0 架次，僅偵獲 2 架次進入西南空域。
+                                    </div>
+                                    <div style="margin-top: 3px; font-size: 6px; color: #9ca3af;">資料來源：國防部軍事動態（台灣官方）</div>
+                                </div>
+
+                                <!-- 2. 禁飛區 (expanded) -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">2.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">區域禁飛區監測</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-up" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 6.5px; color: #6b7280; line-height: 1.5; margin-top: 4px;">
+                                        未見未來 30 天內新增、具軍演特徵且接近台灣的禁航／禁航區。
+                                    </div>
+                                </div>
+
+                                <!-- 3. 撤僑 (expanded) -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">3.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">各國撤僑公告</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-up" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 6.5px; color: #6b7280; line-height: 1.5; margin-top: 4px;">
+                                        美國對台旅遊警示為 Level 1，加拿大為「採取一般安全防範」，日本顯示無危險資訊，三者皆無撤離通告。
+                                    </div>
+                                </div>
+
+                                <!-- 4. JWC (expanded) -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">4.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">JWC 海運保險風險清單</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-up" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 6.5px; color: #6b7280; line-height: 1.5; margin-top: 4px;">
+                                        JWC 最新 JWLA-033 未將台灣／台灣海峽列為 Listed Area。
+                                    </div>
+                                </div>
+
+                                <!-- 5. collapsed -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">5.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">航空保險風險指標</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-down" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 6. collapsed -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">6.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">美國對台飛航限制監測</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-down" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 7. collapsed -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">7.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">近期重要新聞</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-down" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 8. collapsed -->
+                                <div style="border-top: 1px solid #f0f0f0; padding: 6px 0;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="display: flex; align-items: center; gap: 3px;">
+                                            <span style="font-size: 8px; color: #6b7280;">8.</span>
+                                            <span style="font-size: 8px; font-weight: 600; color: #1a1a1a;">市場風險預期</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 5px;">
+                                            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                            <i data-lucide="chevron-down" style="width: 10px; height: 10px; color: #9CA3AF;"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- 避難背包 -->
-                            <div class="bg-white" style="border-radius: 10px; padding: 10px; border-left: 3px solid #059669; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: 70px; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div style="width: 24px; height: 24px; border-radius: 8px; background: rgba(5,150,105,0.1); display: flex; align-items: center; justify-content: center;">
-                                    <i data-lucide="package" class="w-3 h-3" style="color: #059669;"></i>
-                                </div>
-                                <div>
-                                    <div style="font-size: 10px; font-weight: 700; color: #1a1a1a;">避難背包</div>
-                                    <div style="font-size: 7px; color: #888;">管理避難物品</div>
-                                </div>
+
+                            <!-- 可信度 Badge -->
+                            <div style="margin-bottom: 8px;">
+                                <span style="background: #DCFCE7; color: #166534; font-size: 7px; font-weight: 700; padding: 3px 8px; border-radius: 6px;">可信度：高可信度</span>
                             </div>
+
+                            <!-- Disclaimer -->
+                            <div style="width: 100%; font-size: 6px; color: #9ca3af; line-height: 1.6;">
+                                * 此風險評估僅供參考，不應作為決策的唯一依據。
+                            </div>
+
                         </div>
 
-                        <!-- 最近避難所標題 -->
-                        <div style="width: 100%; margin: 10px 0 6px; display: flex; justify-content: space-between; align-items: center;">
-                            <span style="font-size: 11px; font-weight: 700; color: #333;">最近避難所</span>
-                            <div style="display: flex; align-items: center;">
-                                <span style="font-size: 9px; color: #666;">查看地圖</span>
-                                <i data-lucide="chevron-right" style="width: 11px; height: 11px; color: #666;"></i>
+                        <!-- ===== Go-Bag Screen ===== -->
+                        <div id="mockup-gobag" class="mockup-screen" style="transform: translateX(100%); padding: 36px 10px 0; background: #f5f5f5; align-items: stretch;">
+
+                            <!-- Header -->
+                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                                <span onclick="showHome()" style="cursor: pointer; display: flex; align-items: center;">
+                                    <i data-lucide="chevron-left" style="width: 16px; height: 16px; color: #333;"></i>
+                                </span>
+                                <span style="font-size: 12px; font-weight: 700; color: #333;">避難背包</span>
+                                <span style="display: flex; align-items: center;">
+                                    <i data-lucide="plus" style="width: 14px; height: 14px; color: #333;"></i>
+                                </span>
                             </div>
+
+                            <!-- 我的背包 Selector -->
+                            <div style="width: 100%; background: white; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 28px; height: 28px; border-radius: 8px; background: #ecfdf5; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="package" style="width: 14px; height: 14px; color: #059669;"></i>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 3px;">
+                                        <span style="font-size: 10px; font-weight: 600; color: #333;">我的背包</span>
+                                        <i data-lucide="chevron-down" style="width: 10px; height: 10px; color: #9ca3af;"></i>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <i data-lucide="share-2" style="width: 12px; height: 12px; color: #6b7280;"></i>
+                                    <i data-lucide="settings" style="width: 12px; height: 12px; color: #6b7280;"></i>
+                                </div>
+                            </div>
+
+                            <!-- 準備進度 Card -->
+                            <div style="width: 100%; background: white; border-radius: 12px; padding: 12px; margin-bottom: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #ecfdf5; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i data-lucide="package" style="width: 18px; height: 18px; color: #059669;"></i>
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                                            <span style="font-size: 10px; font-weight: 700; color: #333;">準備進度</span>
+                                            <span style="background: #ecfdf5; color: #059669; font-size: 7px; font-weight: 700; padding: 2px 6px; border-radius: 6px;">0%</span>
+                                        </div>
+                                        <div style="font-size: 7px; color: #9ca3af; margin-top: 2px;">0/2 項目已完成</div>
+                                    </div>
+                                </div>
+                                <!-- Progress bar -->
+                                <div style="height: 6px; background: #f0f0f0; border-radius: 3px; margin-bottom: 8px;">
+                                    <div style="height: 100%; width: 0%; background: #059669; border-radius: 3px;"></div>
+                                </div>
+                                <!-- Divider -->
+                                <div style="border-top: 1px solid #f0f0f0; padding-top: 8px;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <span style="font-size: 7px; color: #6b7280;">總重量：150 g</span>
+                                        <span style="font-size: 7px; color: #9ca3af;">建議上限 7.0 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 物品分類 Title (app: fontSize 15, fontWeight 600, color #6b7280) -->
+                            <div style="font-size: 8px; font-weight: 600; color: #6b7280; margin-bottom: 8px; margin-top: 2px;">物品分類</div>
+
+                            <!-- 2-Column Grid (app: 50% width, gap 12, padding 6) -->
+                            <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                <!-- 飲水: Droplets #0369A1 / #E0F2FE -->
+                                <div style="background: white; border-radius: 16px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #E0F2FE; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                        <i data-lucide="droplets" style="width: 16px; height: 16px; color: #0369A1;"></i>
+                                    </div>
+                                    <div style="font-size: 8px; font-weight: 600; color: #1a1a1a;">飲水</div>
+                                    <div style="font-size: 7px; color: #6b7280; margin-top: 1px;">0/1</div>
+                                </div>
+                                <!-- 食物: UtensilsCrossed #92400E / #FEF3C7 -->
+                                <div style="background: white; border-radius: 16px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #FEF3C7; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                        <i data-lucide="utensils-crossed" style="width: 16px; height: 16px; color: #92400E;"></i>
+                                    </div>
+                                    <div style="font-size: 8px; font-weight: 600; color: #1a1a1a;">食物</div>
+                                    <div style="font-size: 7px; color: #6b7280; margin-top: 1px;">無物品</div>
+                                </div>
+                                <!-- 證件: FileText #3730A3 / #E0E7FF -->
+                                <div style="background: white; border-radius: 16px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #E0E7FF; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                        <i data-lucide="file-text" style="width: 16px; height: 16px; color: #3730A3;"></i>
+                                    </div>
+                                    <div style="font-size: 8px; font-weight: 600; color: #1a1a1a;">證件</div>
+                                    <div style="font-size: 7px; color: #6b7280; margin-top: 1px;">無物品</div>
+                                </div>
+                                <!-- 醫療: Heart #9D174D / #FCE7F3 -->
+                                <div style="background: white; border-radius: 16px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #FCE7F3; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                        <i data-lucide="heart" style="width: 16px; height: 16px; color: #9D174D;"></i>
+                                    </div>
+                                    <div style="font-size: 8px; font-weight: 600; color: #1a1a1a;">醫療</div>
+                                    <div style="font-size: 7px; color: #6b7280; margin-top: 1px;">無物品</div>
+                                </div>
+                                <!-- 工具: Wrench #065F46 / #D1FAE5 -->
+                                <div style="background: white; border-radius: 16px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #D1FAE5; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                        <i data-lucide="wrench" style="width: 16px; height: 16px; color: #065F46;"></i>
+                                    </div>
+                                    <div style="font-size: 8px; font-weight: 600; color: #1a1a1a;">工具</div>
+                                    <div style="font-size: 7px; color: #6b7280; margin-top: 1px;">無物品</div>
+                                </div>
+                                <!-- 衣物: Shirt #6B21A8 / #F3E8FF -->
+                                <div style="background: white; border-radius: 16px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                                    <div style="width: 36px; height: 36px; border-radius: 10px; background: #F3E8FF; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                        <i data-lucide="shirt" style="width: 16px; height: 16px; color: #6B21A8;"></i>
+                                    </div>
+                                    <div style="font-size: 8px; font-weight: 600; color: #1a1a1a;">衣物</div>
+                                    <div style="font-size: 7px; color: #6b7280; margin-top: 1px;">0/1</div>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <!-- ShelterCard -->
-                        <div class="w-full bg-white" style="border-radius: 10px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.08);">
-                            <!-- 標題列 -->
-                            <div style="display: flex; align-items: center; margin-bottom: 6px;">
-                                <div style="width: 16px; height: 16px; margin-right: 5px; display: flex; align-items: center; justify-content: center;">
-                                    <i data-lucide="map-pin" style="width: 14px; height: 14px; color: #ff6b6b;"></i>
-                                </div>
-                                <span style="font-size: 11px; font-weight: 700; color: #333; flex: 1;">臺北市立中正國民中學</span>
-                                <span style="background: #fff5f5; border: 1px solid #ffcccc; padding: 2px 6px; border-radius: 8px; font-size: 7px; color: #ff6b6b; font-weight: 600;">最近</span>
-                            </div>
-                            <!-- 地址 -->
-                            <div style="display: flex; align-items: flex-start; gap: 4px; margin-bottom: 6px;">
-                                <i data-lucide="map-pin" style="width: 10px; height: 10px; color: #666; flex-shrink: 0; margin-top: 1px;"></i>
-                                <span style="font-size: 8px; color: #666; line-height: 1.3;">臺北市中正區愛國東路158號</span>
-                            </div>
-                            <!-- 距離資訊 -->
-                            <div style="display: flex; justify-content: space-between; background: #f8f9fa; padding: 5px 8px; border-radius: 5px; margin-bottom: 6px;">
-                                <span style="font-size: 8px; font-weight: 600; color: #ff6b6b;">距離：420m</span>
-                                <span style="font-size: 8px; font-weight: 600; color: #2ed573;">步行時間：5分鐘</span>
-                            </div>
-                            <!-- 容量資訊 -->
-                            <div style="display: flex; gap: 12px; margin-bottom: 8px;">
-                                <div style="display: flex; align-items: center; gap: 3px;">
-                                    <i data-lucide="users" style="width: 10px; height: 10px; color: #666;"></i>
-                                    <span style="font-size: 8px; color: #666;">容量：2,450人</span>
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 3px;">
-                                    <i data-lucide="building" style="width: 10px; height: 10px; color: #666;"></i>
-                                    <span style="font-size: 8px; color: #666;">B1</span>
-                                </div>
-                            </div>
-                            <!-- 導航按鈕 -->
-                            <div style="background: #ff6b6b; padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 4px;">
-                                <i data-lucide="navigation" style="width: 10px; height: 10px; color: white;"></i>
-                                <span style="font-size: 9px; font-weight: 600; color: white;">導航到避難所</span>
-                            </div>
-                        </div>
                     </div>
+                </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -665,6 +1020,25 @@
 
     <script>
         lucide.createIcons();
+
+        var screens = ['mockup-home', 'mockup-risk', 'mockup-gobag'];
+
+        function showScreen(name) {
+            var id = name === 'risk' ? 'mockup-risk' : name === 'gobag' ? 'mockup-gobag' : 'mockup-home';
+            screens.forEach(function(s) {
+                var el = document.getElementById(s);
+                if (s === id) {
+                    el.style.transform = 'translateX(0)';
+                } else if (s === 'mockup-home') {
+                    el.style.transform = 'translateX(-100%)';
+                } else {
+                    el.style.transform = 'translateX(100%)';
+                }
+            });
+        }
+
+        function showRiskDetail() { showScreen('risk'); }
+        function showHome() { showScreen('home'); }
     </script>
 </body>
 </html>
