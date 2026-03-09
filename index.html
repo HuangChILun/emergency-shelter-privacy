@@ -31,7 +31,8 @@
           "name": "台海戰爭逃報報",
           "url": "https://safetw.app",
           "logo": "https://safetw.app/logo.png",
-          "description": "提供全台防空避難所位置查詢與美國對台旅遊警示即時通知"
+          "description": "提供全台防空避難所位置查詢與美國對台旅遊警示即時通知",
+          "sameAs": ["https://www.threads.net/@safetw.app"]
         },
         {
           "@type": "SoftwareApplication",
@@ -74,6 +75,22 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "可以。避難所地點只要打開過一次，就能完整離線使用。離線地圖已包含在 App 下載檔案內，無需額外下載。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "免費版和訂閱方案有什麼差別？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "免費版即可使用防空避難所查詢、離線地圖導航、避難背包管理、美國旅遊警示推播等核心功能。Pro 訂閱解鎖每日兩次台海風險分析報告、高信賴資訊中心，以及 8 大指標的詳細評估與資料來源。風險等級分為四階：正常、觀察中、升高、高度警戒，當等級進入「升高」或「高度警戒」時系統會主動推播通知。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "資料多久更新一次？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "美國旅遊警示每 10 分鐘自動檢查更新，變化時立即推播通知。台海風險分析報告每日更新兩次，綜合當下的軍事動態、保險市場、飛航限制等 8 項指標進行評估。"
               }
             },
             {
@@ -787,7 +804,7 @@
                         <i data-lucide="radar" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">台海風險分析</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">每日更新台海風險等級與分析摘要，整合軍演、外交動態與國際保險判斷。風險升高時立即通知。</p>
+                    <p class="text-slate-600 leading-relaxed text-sm">每日更新兩次台海風險等級與分析摘要，整合軍演、外交動態與國際保險判斷。風險升高時立即通知。</p>
                 </div>
 
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow group">
@@ -796,6 +813,14 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">高信賴資訊中心</h3>
                     <p class="text-slate-600 leading-relaxed text-sm">僅收錄高信任度美國主流媒體（如 Reuters、FT）的海外新聞摘要，過濾假消息干擾。</p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="package" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">避難背包管理</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">自訂避難背包物品清單，追蹤準備進度與有效期限提醒。支援多背包管理、重量計算與分享匯出。</p>
                 </div>
 
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-shadow group">
@@ -870,7 +895,7 @@
                                 金流指標（最誠實的訊號）
                             </h4>
                             <p class="text-slate-600 mb-4 pl-8">
-                                觀察倫敦保險市場 (JWC) 戰爭風險清單與航空戰爭險費率的變動。若風險真的升高，保險公司會是第一個反應成本的——他們不會拿鉅額的營運成本開玩笑。我們也參考 Polymarket 等預測市場的實時數據，參與者必須投入真金白銀，比口頭評論更可靠。
+                                觀察倫敦保險市場 (JWC) 戰爭風險清單與航空戰爭險費率的變動。若風險真的升高，保險公司會是第一個反應成本的，因為他們不會拿鉅額的營運成本開玩笑。我們也參考 Polymarket 等預測市場的實時數據。預測市場的參與者以真金白銀下注，判斷錯誤會直接造成金錢損失，因此市場價格往往比傳統民調或媒體評論更早、更準確地反映真實風險。以 2024 年美國大選為例，主流民調顯示近乎五五開，Polymarket 卻提前數日預測出正確結果。
                             </p>
 
                             <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
@@ -878,7 +903,7 @@
                                 法規指標（官方認定）
                             </h4>
                             <p class="text-slate-600 mb-4 pl-8">
-                                美國 FAA 的禁飛令與各國旅遊警示的具體措辭變化。當美國國務院、日本外務省出現「建議撤離」或「避免所有旅行」這種關鍵訊號時，代表官方已認定安全風險提高。
+                                美國 FAA 與歐洲 EASA 的飛航限制令，以及各國旅遊警示的具體措辭變化。當美國國務院、歐盟、日本外務省出現「建議撤離」或「避免所有旅行」等關鍵訊號時，代表官方已認定安全風險提高。
                             </p>
 
                             <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
@@ -886,7 +911,7 @@
                                 實體指標（物理證據）
                             </h4>
                             <p class="text-slate-600 mb-4 pl-8">
-                                異常的軍事動態與衛星證據。我們不是只看每天幾架，而是看演習規模是否放大、範圍與科目是否異常。高解析度商業衛星（如 Maxar）已能清楚觀測港口船艦集結、臨時設施搭建等跨海作戰準備——這是大規模軍事行動無法隱藏的前置作業。
+                                異常的軍事動態與衛星證據。我們不是只看每天幾架，而是看演習規模是否放大、範圍與科目是否異常。高解析度商業衛星（如 Maxar）已能清楚觀測港口船艦集結、臨時設施搭建等跨海作戰準備，這些都是大規模軍事行動無法隱藏的前置作業。
                             </p>
 
                             <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
@@ -933,6 +958,40 @@
 
                 <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
                     <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
+                        <h3 class="text-lg font-bold text-slate-900">免費版和訂閱方案有什麼差別？</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <div class="prose prose-slate max-w-none text-sm leading-relaxed text-slate-600">
+                            <p class="mb-3">
+                                <strong class="text-slate-900">免費版：</strong>即可使用防空避難所查詢、離線地圖導航、避難背包管理、美國旅遊警示推播等核心安全功能。
+                            </p>
+                            <p>
+                                <strong class="text-slate-900">Pro 訂閱：</strong>解鎖每日兩次台海風險分析報告、高信賴資訊中心（篩選自 Reuters、FT 等一線媒體的台海新聞摘要），以及 8 大指標的詳細評估與資料來源。風險等級分為四階：正常、觀察中、升高、高度警戒，當等級進入「升高」或「高度警戒」時，系統會主動推播通知。請記得開啟通知權限以確保即時收到警示。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
+                        <h3 class="text-lg font-bold text-slate-900">資料多久更新一次？</h3>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6">
+                        <div class="prose prose-slate max-w-none text-sm leading-relaxed text-slate-600">
+                            <p class="mb-3">
+                                美國旅遊警示每 <strong class="text-slate-900">10 分鐘</strong>自動檢查更新，變化時立即推播通知。
+                            </p>
+                            <p>
+                                台海風險分析報告<strong class="text-slate-900">每日更新兩次</strong>，綜合當下的軍事動態、保險市場、飛航限制等 8 項指標進行評估。避難所資料則隨政府公告不定期更新。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-100 overflow-hidden">
+                    <button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-100 transition-colors" onclick="this.parentElement.classList.toggle('open')">
                         <h3 class="text-lg font-bold text-slate-900">避難所位置跟實際地點有點差異？</h3>
                         <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform"></i>
                     </button>
@@ -951,8 +1010,13 @@
 
     <section class="py-20 bg-slate-50">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold mb-8">
-                <i data-lucide="flame" class="w-4 h-4"></i> 已超過一萬八千位用戶加入
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">
+                    <i data-lucide="flame" class="w-4 h-4"></i> 超過 18,000+ 位用戶
+                </div>
+                <a href="https://www.threads.net/@safetw.app" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-semibold hover:bg-slate-200 transition-colors">
+                    <i data-lucide="at-sign" class="w-4 h-4"></i> 22,500+ Threads 粉絲
+                </a>
             </div>
             <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">立即下載，為安全做好準備</h2>
             <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
@@ -1003,10 +1067,16 @@
 
                 <div>
                     <h4 class="font-bold text-slate-900 mb-4">聯絡我們</h4>
-                    <a href="mailto:thomas.huang.ai@gmail.com" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                        thomas.huang.ai@gmail.com
-                    </a>
+                    <div class="space-y-3">
+                        <a href="https://www.threads.net/@safetw.app" target="_blank" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors">
+                            <i data-lucide="at-sign" class="w-4 h-4"></i>
+                            Threads @safetw.app
+                        </a>
+                        <a href="mailto:thomas.huang.ai@gmail.com" class="flex items-center gap-2 text-sm text-slate-600 hover:text-primary-600 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            thomas.huang.ai@gmail.com
+                        </a>
+                    </div>
                 </div>
             </div>
 
