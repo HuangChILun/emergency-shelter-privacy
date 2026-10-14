@@ -1,0 +1,11 @@
+{
+  "name": "safetw-website",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tools/tailwind.config.cjs -i tools/home-input.css -o assets/home.css --minify",
+    "check": "python3 tools/check_site.py && node --test tools/checklist.test.cjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}
